@@ -420,7 +420,7 @@ public class Calculate extends JFrame {
 		
 		return 0;
 	}
-
+	
 	public static void main(String[] args) {
 		new Calculate();
 	}
