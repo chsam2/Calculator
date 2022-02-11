@@ -13,7 +13,7 @@ public class Calculate extends JFrame {
 	static double record = 0;
 	
 	public Calculate() {
-		setTitle("°è»ê±â");
+		setTitle("ê³„ì‚°ê¸°");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		
 		Container c = getContentPane();
@@ -36,15 +36,15 @@ public class Calculate extends JFrame {
 		public EastPanel() {
 			setLayout(new GridLayout(3,1));	
 			setBackground(Color.BLACK);
-			info = new JLabel("¼ö½ÄÀ» ÀÔ·ÂÇÏ¼¼¿ä ");
+			info = new JLabel("ìˆ˜ì‹ì„ ì…ë ¥í•˜ì„¸ìš” ");
 			label = new JLabel(""); 
 			
-			info.setFont(new Font("¸¼Àº °íµñ", 0, 20));		
+			info.setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 20));		
 			info.setBackground(Color.BLACK);
 			info.setForeground(Color.WHITE);
 			info.setHorizontalAlignment(SwingConstants.RIGHT);
 			
-			label.setFont(new Font("¸¼Àº °íµñ", 0, 40));
+			label.setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 40));
 			label.setBackground(Color.BLACK);
 			label.setForeground(Color.WHITE);		
 			label.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -55,12 +55,12 @@ public class Calculate extends JFrame {
 		}
 	}
 	/*
-	class MyMouse extends MouseAdapter {//Label´õºí Å¬¸¯½Ã ÃÊ±âÈ­
+	class MyMouse extends MouseAdapter {//Labelë”ë¸” í´ë¦­ì‹œ ì´ˆê¸°í™”
 		public void mousePressed(MouseEvent e) {	
 			if (e.getClickCount() == 2) {
 				flag = 0;
 				label.setText(""); 
-				info.setText("¼ö½ÄÀ» ÀÔ·ÂÇÏ¼¼¿ä ");
+				info.setText("ìˆ˜ì‹ì„ ì…ë ¥í•˜ì„¸ìš” ");
 			}		
 		}
 	}
@@ -73,14 +73,14 @@ public class Calculate extends JFrame {
 			setLayout(new GridLayout (5,4,5,5));
 			
 			bt[0] = new JButton("Re");
-			bt[1] = new JButton("P");//ÀÌÀü °è»ê°ª
-			bt[2] = new JButton("^");//Á¦°ö
-			bt[3] = new JButton("¡À");
+			bt[1] = new JButton("P");//ì´ì „ ê³„ì‚°ê°’
+			bt[2] = new JButton("^");//ì œê³±
+			bt[3] = new JButton("Ã·");
 			
 			bt[4] = new JButton("7");
 			bt[5] = new JButton("8");
 			bt[6] = new JButton("9");
-			bt[7] = new JButton("¡¿");
+			bt[7] = new JButton("Ã—");
 			
 			bt[8] = new JButton("4");
 			bt[9] = new JButton("5");
@@ -99,12 +99,12 @@ public class Calculate extends JFrame {
 			
 			for (int i = 0; i < 20; i++) {	
 				if (i==4 || i==5 || i==6 || i==8 || i==9 || i==10 || i==12 || i==13 || i==14 || i==17) {
-					bt[i].setFont(new Font("¸¼Àº °íµñ", 0, 30));
+					bt[i].setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 30));
 					bt[i].setBackground(Color.GRAY);
 					bt[i].setForeground(Color.WHITE);
 					add(bt[i]);
 					
-					bt[i].addActionListener(new ActionListener () {//¼ıÀÚ
+					bt[i].addActionListener(new ActionListener () {//ìˆ«ì
 						public void actionPerformed(ActionEvent e) {
 							if (flag == 0) {
 								JButton b = (JButton)e.getSource();
@@ -113,43 +113,43 @@ public class Calculate extends JFrame {
 								String newtext = oldtext + text;
 								
 								int n = newtext.length();
-								if (n <= 10) label.setFont(new Font("¸¼Àº °íµñ", 0, 40));
-								else if (n > 10) label.setFont(new Font("¸¼Àº °íµñ", 0, 30));	
+								if (n <= 10) label.setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 40));
+								else if (n > 10) label.setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 30));	
 								
 								if (n <= 25) {
 									label.setText(newtext);
-									info.setText("¼ö½ÄÀ» °è»ê ÁßÀÔ´Ï´Ù ");
+									info.setText("ìˆ˜ì‹ì„ ê³„ì‚° ì¤‘ì…ë‹ˆë‹¤ ");
 								}
-								else if (n > 25) info.setText("ÀÔ·Â °¡´ÉÇÑ ¹üÀ§¸¦ ÃÊ°úÇÏ¿´½À´Ï´Ù ");
+								else if (n > 25) info.setText("ì…ë ¥ ê°€ëŠ¥í•œ ë²”ìœ„ë¥¼ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤ ");
 							}					
 						}
 					});
 				}
 				
 				else if (i == 16) {//C
-					bt[i].setFont(new Font("¸¼Àº °íµñ", 0, 30));
+					bt[i].setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 30));
 					bt[i].setBackground(Color.LIGHT_GRAY);
 					bt[i].setForeground(Color.WHITE);
 					add(bt[i]);
 					bt[i].addActionListener(new Cancel ());				
 				}
 				else if (i == 19) {//=
-					bt[i].setFont(new Font("¸¼Àº °íµñ", 0, 30));
+					bt[i].setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 30));
 					bt[i].setBackground(Color.ORANGE);
 					bt[i].setForeground(Color.WHITE);
 					add(bt[i]);			
 					bt[i].addActionListener(new CalcListener());
 				}
 				
-				else if (i==2 || i==3 || i==7 || i==11 || i==15){//¿¬»êÀÚ
-					bt[i].setFont(new Font("¸¼Àº °íµñ", 0, 40));
+				else if (i==2 || i==3 || i==7 || i==11 || i==15){//ì—°ì‚°ì
+					bt[i].setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 40));
 					bt[i].setBackground(new Color (234,150,72));
 					bt[i].setForeground(Color.WHITE);
 					add(bt[i]);				
 					bt[i].addActionListener(new MyListener());
 				}
 				else if (i==1){//P
-					bt[i].setFont(new Font("¸¼Àº °íµñ", 0, 40));
+					bt[i].setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 40));
 					bt[i].setBackground(Color.GRAY);
 					bt[i].setForeground(Color.WHITE);
 					add(bt[i]);				
@@ -157,14 +157,14 @@ public class Calculate extends JFrame {
 				}
 				
 				else if (i == 18) {//.
-					bt[i].setFont(new Font("¸¼Àº °íµñ", 0, 30));
+					bt[i].setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 30));
 					bt[i].setBackground(Color.GRAY);
 					bt[i].setForeground(Color.WHITE);
 					add(bt[i]);
 					bt[i].addActionListener(new Dot());
 				}
 				else if(i == 0) {//Re
-					bt[i].setFont(new Font("¸¼Àº °íµñ", 0, 30));
+					bt[i].setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 30));
 					bt[i].setBackground(Color.LIGHT_GRAY);
 					bt[i].setForeground(Color.WHITE);
 					add(bt[i]);			
@@ -172,7 +172,7 @@ public class Calculate extends JFrame {
 						public void actionPerformed(ActionEvent e) {	
 							flag = 0;
 							label.setText(""); 
-							info.setText("¼ö½ÄÀ» ÀÔ·ÂÇÏ¼¼¿ä ");
+							info.setText("ìˆ˜ì‹ì„ ì…ë ¥í•˜ì„¸ìš” ");
 						}
 					});
 				}
@@ -185,18 +185,18 @@ public class Calculate extends JFrame {
 			int n = label.getText().length()-1;
 			if (n == 0) {
 				label.setText("");
-				info.setText("¼ö½ÄÀ» ÀÔ·ÂÇÏ¼¼¿ä ");
+				info.setText("ìˆ˜ì‹ì„ ì…ë ¥í•˜ì„¸ìš” ");
 				flag = 0;
 			}						
 			else if (n > 0 && n <= 10) {
-				label.setFont(new Font("¸¼Àº °íµñ", 0, 40));
+				label.setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 40));
 				label.setText(label.getText().substring(0, n));
-				info.setText("¼ö½ÄÀ» Áö¿ì´Â ÁßÀÔ´Ï´Ù ");		
+				info.setText("ìˆ˜ì‹ì„ ì§€ìš°ëŠ” ì¤‘ì…ë‹ˆë‹¤ ");		
 			}						
 			else {
-				label.setFont(new Font("¸¼Àº °íµñ", 0, 35));
+				label.setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 35));
 				label.setText(label.getText().substring(0, n));
-				info.setText("¼ö½ÄÀ» Áö¿ì´Â ÁßÀÔ´Ï´Ù ");
+				info.setText("ìˆ˜ì‹ì„ ì§€ìš°ëŠ” ì¤‘ì…ë‹ˆë‹¤ ");
 			}
 		}
 	}
@@ -206,12 +206,12 @@ public class Calculate extends JFrame {
 			JButton b = (JButton)e.getSource();
 			int n = label.getText().length();
 			Character c = label.getText().charAt(n-1);
-			if (flag == 0 && c != '+' && c != '-' && c != '¡¿' && c != '¡À' && c != '^' && c != '.') {
+			if (flag == 0 && c != '+' && c != '-' && c != 'Ã—' && c != 'Ã·' && c != '^' && c != '.') {
 				String oldtext = label.getText();
 				String text = b.getText();
 				String newtext = oldtext + text;
 				label.setText(newtext);
-				info.setText("¼ö½ÄÀ» °è»ê ÁßÀÔ´Ï´Ù ");
+				info.setText("ìˆ˜ì‹ì„ ê³„ì‚° ì¤‘ì…ë‹ˆë‹¤ ");
 			}		
 		}
 	}
@@ -225,7 +225,7 @@ public class Calculate extends JFrame {
 			int text_len = text.length();
 			Character c2 = text.charAt(text_len-1);
 			String s2 = Character.toString(c2);
-			if (flag == 0 && (c1 == '+' || c1 == '-' || c1 == '¡¿' || c1 == '¡À' || c1 == '^' || c1==null)) {
+			if (flag == 0 && (c1 == '+' || c1 == '-' || c1 == 'Ã—' || c1 == 'Ã·' || c1 == '^' || c1==null)) {
 				if(record<0) {
 					if(s1.equals("+")) {
 						oldtext=oldtext.substring(0, old_len-1);
@@ -234,7 +234,7 @@ public class Calculate extends JFrame {
 						text=text.substring(1, text_len);
 						oldtext=oldtext.substring(0, old_len-1)+"+";
 					}
-					else if(s1.equals("¡¿") || s1.equals("¡À")) {
+					else if(s1.equals("Ã—") || s1.equals("Ã·")) {
 						text=text.substring(1, text_len);
 						StringBuffer sb = new StringBuffer(oldtext);
 						String reversedStr = sb.reverse().toString();
@@ -265,31 +265,31 @@ public class Calculate extends JFrame {
 						String reversedStr = sb.reverse().toString();
 						int a = 0;
 						for(int i = 0; i<old_len; i++) {
-							if(reversedStr.charAt(i) == '+' || reversedStr.charAt(i) == '-' || reversedStr.charAt(i) == '¡¿' || reversedStr.charAt(i) == '¡À' ||i==old_len-1) {
+							if(reversedStr.charAt(i) == '+' || reversedStr.charAt(i) == '-' || reversedStr.charAt(i) == 'Ã—' || reversedStr.charAt(i) == 'Ã·' ||i==old_len-1) {
 								a = i;
 								break;
 							}
 						}
 						int b = old_len-a-1;
 						if(b==0) {
-							oldtext =  "1¡À"+ oldtext;
+							oldtext =  "1Ã·"+ oldtext;
 						}
 						else {
-							oldtext = oldtext.substring(0, b+1) + "1¡À"+ oldtext.substring(b + 1);
+							oldtext = oldtext.substring(0, b+1) + "1Ã·"+ oldtext.substring(b + 1);
 						}
 					}
 				}
 				String newtext = oldtext + text;
 				
 				int n = newtext.length();
-				if (n <= 10) label.setFont(new Font("¸¼Àº °íµñ", 0, 40));
-				else if (n > 10) label.setFont(new Font("¸¼Àº °íµñ", 0, 30));	
+				if (n <= 10) label.setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 40));
+				else if (n > 10) label.setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 30));	
 				
 				if (n <= 25) {
 					label.setText(newtext);
-					info.setText("¼ö½ÄÀ» °è»ê ÁßÀÔ´Ï´Ù ");
+					info.setText("ìˆ˜ì‹ì„ ê³„ì‚° ì¤‘ì…ë‹ˆë‹¤ ");
 				}
-				else if (n > 25) info.setText("ÀÔ·Â °¡´ÉÇÑ ¹üÀ§¸¦ ÃÊ°úÇÏ¿´½À´Ï´Ù ");
+				else if (n > 25) info.setText("ì…ë ¥ ê°€ëŠ¥í•œ ë²”ìœ„ë¥¼ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤ ");
 			}		
 		}
 	}
@@ -298,12 +298,12 @@ public class Calculate extends JFrame {
 			JButton b = (JButton)e.getSource();
 			int n = label.getText().length();
 			Character c = label.getText().charAt(n-1);
-			if (flag == 0 && c != '+' && c != '-' && c != '¡¿' && c != '¡À' && c != '^' && c != '.') {
+			if (flag == 0 && c != '+' && c != '-' && c != 'Ã—' && c != 'Ã·' && c != '^' && c != '.') {
 				String oldtext = label.getText();
 				String text = b.getText();
 				String newtext = oldtext + text;
 				label.setText(newtext);
-				info.setText("¼ö½ÄÀ» °è»ê ÁßÀÔ´Ï´Ù ");
+				info.setText("ìˆ˜ì‹ì„ ê³„ì‚° ì¤‘ì…ë‹ˆë‹¤ ");
 			}	
 		}
 	}
@@ -313,15 +313,15 @@ public class Calculate extends JFrame {
 			String formula = label.getText();		
 			double result = Calculator(formula);
 			record = result;
-			label.setFont(new Font("¸¼Àº °íµñ", 0, 40));
+			label.setFont(new Font("ë§‘ì€ ê³ ë”•", 0, 40));
 			
 			if (result < -10000000) {
-				info.setText("-10,000,000 ÀÌ»óÀÇ ¹üÀ§¸¸ °è»êÇÒ ¼ö ÀÖ½À´Ï´Ù ");
+				info.setText("-10,000,000 ì´ìƒì˜ ë²”ìœ„ë§Œ ê³„ì‚°í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤ ");
 				label.setText(Double.toString(result));
 				flag = 1;
 			}	
 			else if (result >= 10000000) {
-				info.setText("10,000,000 ¹Ì¸¸ÀÇ ¹üÀ§¸¸ °è»êÇÒ ¼ö ÀÖ½À´Ï´Ù ");
+				info.setText("10,000,000 ë¯¸ë§Œì˜ ë²”ìœ„ë§Œ ê³„ì‚°í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤ ");
 				label.setText("0.0");
 			}
 			else label.setText(Double.toString(result));					
@@ -335,9 +335,9 @@ public class Calculate extends JFrame {
 		ArrayList<Double> v = new ArrayList<Double>();
 		ArrayList<String> op = new ArrayList<String>();
 		
-		op.add(null);//0¹øÂ° index´Â null
+		op.add(null);//0ë²ˆì§¸ indexëŠ” null
 		String str = new String("");
-		for (i = 0; i < formula.length(); i++) {//v¿¡ ¼ıÀÚ op¿¡ ¹®ÀÚ ³Ö±â
+		for (i = 0; i < formula.length(); i++) {//vì— ìˆ«ì opì— ë¬¸ì ë„£ê¸°
 			Character c = formula.charAt(i);
 			String s = Character.toString(c);
 			
@@ -361,16 +361,16 @@ public class Calculate extends JFrame {
 			}
 		}
 		
-		for(i = 0; i < v.size(); i++) {//¼ıÀÚÀÇ Å©±âÁ¡°Ë
+		for(i = 0; i < v.size(); i++) {//ìˆ«ìì˜ í¬ê¸°ì ê²€
 			if (v.get(i) >= 10000000) {
 				check = 1;		
-				info.setText("10,000,000 ¹Ì¸¸ÀÇ ¼ö³¢¸®¸¸ °è»êÇÒ ¼ö ÀÖ½À´Ï´Ù ");
+				info.setText("10,000,000 ë¯¸ë§Œì˜ ìˆ˜ë¼ë¦¬ë§Œ ê³„ì‚°í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤ ");
 				break;
 			}
 		}
 		
 		if (check == 0) {
-			for(i = 1; i < v.size(); i++) {//Á¦°öºÎÅÍ °è»ê
+			for(i = 1; i < v.size(); i++) {//ì œê³±ë¶€í„° ê³„ì‚°
 				String s = op.get(i);
 				double tmp;
 				
@@ -384,11 +384,11 @@ public class Calculate extends JFrame {
 				}
 			}
 			
-			for(i = 1; i < v.size(); i++) {//Á¦°öºÎÅÍ °è»ê
+			for(i = 1; i < v.size(); i++) {//ì œê³±ë¶€í„° ê³„ì‚°
 				String s = op.get(i);
 				double tmp;
 				
-				if (s.equals("¡¿")) {
+				if (s.equals("Ã—")) {
 					tmp = v.get(i-1) * v.get(i);
 					op.remove(i);
 					v.remove(i);
@@ -396,7 +396,7 @@ public class Calculate extends JFrame {
 					v.add(i-1, tmp);
 					i--;
 				}	
-				else if (s.equals("¡À")) {
+				else if (s.equals("Ã·")) {
 					tmp = v.get(i-1) / v.get(i);
 					op.remove(i);
 					v.remove(i);
@@ -407,7 +407,7 @@ public class Calculate extends JFrame {
 			}
 			
 			ans = v.get(0);
-			for(i = 1; i < v.size(); i++) {//ÇÕ °è»ê
+			for(i = 1; i < v.size(); i++) {//í•© ê³„ì‚°
 				String s = op.get(i);
 				double n = v.get(i);
 				
@@ -424,6 +424,6 @@ public class Calculate extends JFrame {
 	public static void main(String[] args) {
 		new Calculate();
 		//i can do it!
-		//dddddddddd
+		//in vscode
 	}
 }
